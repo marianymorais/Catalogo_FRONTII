@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    /* Paleta clara */
+    --bg: #eadafa;         
+    --bg-claro: #f3eff8;         
+    --fg: #2b2237;        
+    --card: #fee1ef;       
+    --accent: #ff7ba3;
+    --badge: #f9c696;     
+    --ok: #53d6ff;        
+    --border: #e8def4;     
+    --muted: #6b5a7b;     
+    --focus: #2b2237;      
+    --text-basic: #3f0f25;
+    
+}
+
+*{
+    box-sizing:border-box;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+body{
+    margin:0;
+   
+    background:var(--bg);
+    color:var(--fg);
+    line-height:1.5; /* melhor legibilidade */
+    font-size: 1.3em;
+}
+
+h1,h2,h3{
+    font-family: "Grenze Gotisch", serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+h1{
+    font-size: 3em;
+}
+
+
+a{
+    color:var(--accent);
+    text-decoration:none;
+}
+a:hover{
+    text-decoration:underline;
+}
+
+/* Skip link para acessibilidade */
+.skip{
+    position:absolute;
+    left:-9999px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+.skip:focus{
+    left:1rem;
+    top:1rem;
+    width:auto;
+    height:auto;
+    background:#fff;
+    color:#000;
+    padding:.5rem 1rem;
+    border-radius:.5rem;
+    box-shadow:0 6px 18px rgba(0,0,0,.15);
+}
+
+
+main{
+    max-width:1600px;
+    margin:auto;
+    padding:1rem;
+}
+
+header{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:1rem;
+}
+
+.titulo{
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo h1{
+    margin: 0;
+}
+
+button{
+    background:var(--accent);
+    border:1px solid transparent;
+    color:var(--text-basic); 
+    font-weight:700;
+    padding:.6rem .9rem;
+    border-radius:.8rem;
+    cursor:pointer;
+    transition:transform .06s ease, box-shadow .2s ease, background .2s ease;
+    box-shadow:0 2px 0 rgba(0,0,0,.08);
+}
+
+button:hover{
+    transform:translateY(-1px);
+    box-shadow:0 8px 20px rgba(255,123,163,.25);
+}
+
+button:active{
+    transform:translateY(0);
+    box-shadow:0 2px 0 rgba(0,0,0,.12);
+}
+
+button:focus{
+    outline:4px solid var(--focus);
+    outline-offset:2px;
+}
+
+.toggle[aria-pressed="true"] {
+    background-color: var(--ok);
+}
+
+/* Grid responsivo */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(350px, 1fr));
+    gap:1rem;
+}
+
+/* cardinhos */
+.card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:1rem;
+    padding:1rem;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+    gap:.5rem;
+    box-shadow:0 10px 28px rgba(43,34,55,.08);
+
+}
+.card h3{
+    margin:.25rem 0;
+    font-size:1.9rem;
+}
+
+.botoes{
+    display: flex;
+    align-self: center;
+    gap: 20px;
+}
+
+/*IBAGENS*/
+
+.imagens{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+.imagens img{
+    width: 100%;
+}
+
+/* Badge */
+.badge{
+    align-content: center;
+    background:var(--badge);  
+    color:var(--text-basic);       /* vinho suave para leitura */
+    padding:.18rem .6rem;
+    border-radius:999px;
+    font-size:.9rem;
+    border:1px solid rgba(75,19,48,.08);
+}
+
+.badge p{
+    padding:1.5em;
+    display: inline;
+    font-size: 1.5em;
+
+}
+
+/* busca */
+input{
+    background:var(--bg-claro);
+    border:1px solid var(--border);
+    color:var(--fg);
+    padding:.6rem .75rem;
+    border-radius:.6rem;
+    width:100%;
+    margin-bottom: 30px;
+    font-size: 1.3em;
+}
+input::placeholder{
+    color:#72628a; /* lilás claro */
+}
+input:focus{
+    outline:3px solid var(--accent);
+    outline-offset:2px;
+    border-color:transparent;
+}
+
+.inputis label h2{
+    margin: 0;
+    padding-left: 0.5em;
+}
+
+footer{
+    margin-top:2rem;
+    opacity:.95;
+    font-size:.92rem;
+    color:black;
+}
+
+/* Modo escuro automático  */
+@media (prefers-color-scheme: light){
+  :root{
+    /* Paleta escura correspondente (mesma identidade cromática) */
+    --bg:#2b2237;       /* lilás profundo */
+    --fg:#f7f5fb;       /* quase branco com leve lilás */
+    --card:#3a2b4a;     /* roxo/chá escuro */
+    --accent:#ff7ba3;   /* rosa chiclete suave (mantém identidade) */
+    --ok:#79e8c9;       /* verde-azulado menta */
+    --border:#5a466e;   /* roxo acinzentado */
+    --muted:#cab8da;    /* lilás claro */
+    --focus:#fff;       /* anel claro p/ foco em dark */
+  }
+
+  /* Ajustes de leveza no dark */
+  .card{
+    box-shadow:0 8px 24px rgba(0,0,0,.18);
+  }
+  input[type=text]{
+    background:#2e2640; /* roxo escuro suave */
+  }
+}
+
+
