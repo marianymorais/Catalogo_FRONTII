@@ -219,6 +219,9 @@ footer{
     opacity:.95;
     font-size:.92rem;
     color:black;
+    display: flex;
+    align-content: center;
+    justify-content: center;
 }
 
 /* Modo escuro automático  */

@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import { ItemCard } from './components/ItemCard.jsx'
+import {Footer} from "./components/Footer.jsx"
 import { initialItems } from './data/items.js'
 
 export default function App(){
@@ -68,11 +69,7 @@ export default function App(){
         <p role="status">Nenhum item encontrado para o filtro informado.</p>
       )}
 
-      <footer>
-        <p>
-          Mari Morais TM
-        </p>
-      </footer>
+      <Footer/>
     </main>
   )
 }
